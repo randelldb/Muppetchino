@@ -1,0 +1,21 @@
+:root{
+    --retro-gray: #607274;
+    --retro-creme: #FAEED1;
+    --retro-beige: #DED0B6;
+    --retro-brown: #B2A59B;
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--retro-gray);
+}
+
+.mainframe{
+    padding: 24px;
+    width: 80vw;
+    background-color: var(--retro-creme);
+    box-shadow: 15px 15px 0 #000000 ;
+}
