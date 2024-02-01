@@ -9,7 +9,7 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 export class TerminalComponent{
 
   public caretPosition:number = 0;
-  public readableOutput:string = '';
+  public readableOutput:any[] = [];
   public lastInput:string = ''
   @Input() userInput:any[] =[];
 
@@ -19,7 +19,10 @@ export class TerminalComponent{
   readInput(event: KeyboardEvent):void{
     // make sure it wont add shift or ctl keys
     if(event.key.length == 1){
-      this.userInput.push(event);
+      this.userInput.push(event.key);
+      if(event.code === 'Space'){
+        this.userInput.push('\u00A0');
+      }
     }
 
     if(event.key === 'Backspace'){
@@ -30,15 +33,11 @@ export class TerminalComponent{
       this.navigateCaret(event.key);
     }
 
-    console.log(event.key)
+    console.log(event)
   }
 
   writeOutput(){
-    // Map the value of 'key' to a string
-    this.readableOutput = this.userInput.map((item) => {
-      return item.key
-    }).join('')
-
+    this.readableOutput = this.userInput;
     return this.readableOutput;
   }
 

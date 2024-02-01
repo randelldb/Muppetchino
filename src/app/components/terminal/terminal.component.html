@@ -1,7 +1,7 @@
 <div class="terminal-window">
     <span>muppetchino@work home $ </span>
     <span class="terminal-io-row">
-        {{ writeOutput() }}
+        <span class="terminal-io-text" *ngFor="let item of writeOutput()">{{item}}</span>
     </span>
 
 </div>
