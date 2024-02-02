@@ -8,6 +8,8 @@ import {Component, HostListener, Input, OnInit} from '@angular/core';
 
 export class TerminalComponent{
 
+  //test
+
   public caretPosition:number = 0;
   public readableOutput:any[] = [];
   public lastInput:string = ''
